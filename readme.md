@@ -1,4 +1,4 @@
-# LAMP config for WordPress and Laravel based on Docker
+# LAMP for WordPress and Laravel
 
 ### Install Laravel
 

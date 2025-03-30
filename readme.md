@@ -1,5 +1,7 @@
 # LAMP config for WordPress and Laravel based on Docker
 
+### Install Laravel
+
 Setup Docker:
 
 ```
@@ -11,8 +13,6 @@ docker-compose up -d
 - Apache - http://localhost:8000/
 - phpMyAdmin - http://localhost:8080/ (`lamp` / `lamp`)
 - MailHog - http://localhost:8025/
-
-### Install Laravel
 
 ```
 sudo chown -R $USER:$USER www
@@ -78,3 +78,22 @@ Mail::raw('This is a test email', function ($message) {
 ```
 
 Check Email - http://localhost:8025/
+
+### Install WordPress
+
+Setup Docker:
+
+```
+git clone git@github.com:kamuz/docker-lamp.git wordpress
+cd wordpress/
+docker-compose up -d
+```
+
+- Apache - http://localhost:8000/
+- phpMyAdmin - http://localhost:8080/ (`lamp` / `lamp`)
+- MailHog - http://localhost:8025/
+
+```
+sudo chown -R $USER:$USER www
+docker ps
+docker exec -it lamp_apache bash

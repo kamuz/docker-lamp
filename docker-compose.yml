@@ -28,7 +28,7 @@ services:
             MYSQL_ROOT_PASSWORD: password
             MYSQL_DATABASE: lamp
             MYSQL_USER: lamp
-            MYSQL_PASSWORD: password
+            MYSQL_PASSWORD: lamp
         ports:
             - "3306:3306"
         networks:

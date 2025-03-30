@@ -1,6 +1,8 @@
 # LAMP for WordPress and Laravel
 
-### Install Laravel
+It's very simple server LAMP based on *Dockerfile* and *docker-compose.yml* for Laravel and WordPress with WP-CLI, Composer, phpMyAdmin and MailHog.
+
+## Install Laravel
 
 Setup Docker:
 
@@ -79,7 +81,7 @@ Mail::raw('This is a test email', function ($message) {
 
 Check Email - http://localhost:8025/
 
-### Install WordPress
+## Install WordPress
 
 Setup Docker:
 

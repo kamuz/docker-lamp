@@ -1,6 +1,6 @@
 # LAMP for WordPress and Laravel
 
-It's very simple server LAMP based on *Dockerfile* and *docker-compose.yml* for Laravel and WordPress with WP-CLI, Composer, phpMyAdmin and MailHog.
+It's very simple server LAMP based on files *Dockerfile* and *docker-compose.yml* for Laravel and WordPress with WP-CLI, Composer, phpMyAdmin and MailHog.
 
 ## Install Laravel
 

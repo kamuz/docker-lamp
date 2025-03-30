@@ -11,7 +11,7 @@ docker-compose up -d
 ```
 
 - Apache - http://localhost:8000/
-- phpMyAdmin - http://localhost:8080/ (`lamp` / `lamp`)
+- phpMyAdmin - http://localhost:8080/
 - MailHog - http://localhost:8025/
 
 ```
@@ -90,10 +90,40 @@ docker-compose up -d
 ```
 
 - Apache - http://localhost:8000/
-- phpMyAdmin - http://localhost:8080/ (`lamp` / `lamp`)
+- phpMyAdmin - http://localhost:8080/
 - MailHog - http://localhost:8025/
 
 ```
 sudo chown -R $USER:$USER www
 docker ps
-docker exec -it lamp_apache bash
+docker exec -it -u www-data lamp_apache bash
+wp --version
+php -d memory_limit=256M /usr/local/bin/wp core download
+```
+
+Run WordPress installation - http://localhost:8000/ with next DB credentials:
+
+```
+DB_NAME=lamp
+DB_USER=lamp
+DB_PASSWORD=lamp
+DB_HOST=db
+```
+
+Send test email:
+
+```
+wp plugin install wp-mail-smtp --activate
+
+wp config set WPMS_ON true --raw
+wp config set WPMS_MAILER smtp
+wp config set WPMS_SMTP_HOST mailhog
+wp config set WPMS_SMTP_PORT 1025
+wp config set WPMS_SSL ''
+wp config set WPMS_SMTP_AUTH false --raw
+wp config set WPMS_SMTP_AUTOTLS false --raw
+wp config set WPMS_SMTP_USER ''
+wp config set WPMS_SMTP_PASS ''
+
+wp eval 'wp_mail("test@example.com", "Test Email", "This is a test email from WordPress.");'
+```

@@ -25,7 +25,7 @@ services:
         container_name: lamp_mysql
         restart: unless-stopped
         environment:
-            MYSQL_ROOT_PASSWORD: password
+            MYSQL_ROOT_PASSWORD: lamp
             MYSQL_DATABASE: lamp
             MYSQL_USER: lamp
             MYSQL_PASSWORD: password

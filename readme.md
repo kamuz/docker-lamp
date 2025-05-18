@@ -20,6 +20,11 @@ docker-compose up -d
 sudo chown -R $USER:$USER www
 docker ps
 docker exec -it lamp_apache bash
+```
+
+Check composer version and install Laravel:
+
+```
 composer --version
 composer create-project --prefer-dist laravel/laravel .
 ```
@@ -99,6 +104,11 @@ docker-compose up -d
 sudo chown -R $USER:$USER www
 docker ps
 docker exec -it -u www-data lamp_apache bash
+```
+
+Check WP-CLI version and download WordPress:
+
+```
 wp --version
 php -d memory_limit=256M /usr/local/bin/wp core download
 ```

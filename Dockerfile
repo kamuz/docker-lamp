@@ -3,9 +3,11 @@ FROM php:8.2-apache
 # Install required packages and extensions
 RUN apt-get update && apt-get install -y \
     libpng-dev \
-    libjpeg-dev \
-    libfreetype6-dev \
-    vim
+    libjpeg-dev
+
+# Configure and install GD extension
+RUN docker-php-ext-configure gd --with-freetype --with-jpeg \
+    && docker-php-ext-install gd
 
 # Create wp-cli cache directory and set proper permissions
 RUN mkdir -p /var/www/.wp-cli/cache/ && \
